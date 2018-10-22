@@ -14,8 +14,10 @@ function contact_sort_code()
 {
 	ob_start();
 
-	ContactFormHandler::send();
-	ContactFormHandler::get();
+	$form = new ContactFormHandler();
+
+	$form->send();
+	$form->get();
 
 	return ob_get_clean();
 }
